@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://personEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.jsonb.web.screens.person">
+    <data>
+        <instance id="personDc"
+                  class="com.company.jsonb.entity.Person">
+            <view extends="_local">
+                <property name="address" fetch="UNDEFINED" view="_minimal"/>
+            </view>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="personDc">
+            <column width="350px">
+                <textField id="nameField" property="name"/>
+                <textField id="addressCountry" property="address.country"/>
+                <textField id="addressCity" property="address.city"/>
+                <textField id="addressField" property="address.address"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

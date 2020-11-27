@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="jsonb-test" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.company.jsonb.entity.JsonConverter</class>
+        <class>com.company.jsonb.entity.Person</class>
+
+    </persistence-unit>
+</persistence>
