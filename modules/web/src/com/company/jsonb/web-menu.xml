@@ -2,5 +2,6 @@
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
     <menu id="application-jsonb" insertBefore="administration" caption="mainMsg://menu_config.application-jsonb">
         <item screen="jsonb_Person.browse" caption="mainMsg://menu_config.jsonb_Person.browse"/>
+        <item screen="jsonb_Company.browse" caption="mainMsg://menu_config.jsonb_Company.browse"/>
     </menu>
 </menu-config>

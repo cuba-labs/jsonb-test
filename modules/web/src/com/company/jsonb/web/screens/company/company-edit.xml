@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://companyEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.jsonb.web.screens.company">
+    <data>
+        <instance id="companyDc"
+                  class="com.company.jsonb.entity.Company">
+            <view extends="_local">
+                <property name="employees" view="_minimal"/>
+                <property name="addresses" view="_local"/>
+            </view>
+            <loader/>
+            <collection id="personsDc" property="employees"/>
+            <collection id="addressesDc" property="addresses"/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="companyDc">
+            <column width="350px">
+                <textField id="nameField" property="name"/>
+            </column>
+        </form>
+        <groupBox id="employeesBox" caption="Employees">
+            <table id="employeesTable" dataContainer="personsDc" width="100%" height="200px">
+                <actions>
+                    <action id="add" type="add"/>
+                    <action id="exclude" type="exclude"/>
+                </actions>
+                <columns>
+                    <column id="name"/>
+                </columns>
+                <buttonsPanel>
+                    <button action="employeesTable.add"/>
+                    <button action="employeesTable.exclude"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <groupBox id="addressesBox" caption="Addresses">
+            <table id="addressesTable" dataContainer="addressesDc" width="100%" height="200px">
+                <actions>
+                    <action id="create" type="create"/>
+                    <action id="delete" type="exclude"/>
+                </actions>
+                <columns>
+                    <column id="country"/>
+                    <column id="city"/>
+                    <column id="address"/>
+                </columns>
+                <buttonsPanel>
+                    <button action="addressesTable.create"/>
+                    <button action="addressesTable.delete"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

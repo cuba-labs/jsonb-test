@@ -20,6 +20,18 @@ public class Person extends BaseIntIdentityIdEntity {
     @Column(name = "ADDRESS", columnDefinition = "jsonb")
     private Address address;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "COMPANY_ID")
+    private Company company;
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
     public Address getAddress() {
         return address;
     }

@@ -1,1 +1,4 @@
-
+-- begin JSONB_PERSON
+alter table JSONB_PERSON add constraint FK_JSONB_PERSON_ON_COMPANY foreign key (COMPANY_ID) references JSONB_COMPANY(ID)^
+create index IDX_JSONB_PERSON_ON_COMPANY on JSONB_PERSON (COMPANY_ID)^
+-- end JSONB_PERSON

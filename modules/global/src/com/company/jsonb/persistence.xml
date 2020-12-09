@@ -4,6 +4,7 @@
 
         <class>com.company.jsonb.entity.JsonConverter</class>
         <class>com.company.jsonb.entity.Person</class>
+        <class>com.company.jsonb.entity.Company</class>
 
     </persistence-unit>
 </persistence>
